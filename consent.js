@@ -35,18 +35,25 @@
     saveChoice(granted ? 'granted' : 'denied');
     closeBar();
   }
+  var TXT = {
+    nl: { text: 'We gebruiken cookies voor statistieken en advertenties (Google Analytics &amp; Google Ads) om onze website en campagnes te verbeteren. Lees meer in ons <a href="cookiebeleid.html">cookiebeleid</a>.', accept: 'Accepteren', deny: 'Weigeren', aria: 'Cookietoestemming' },
+    fr: { text: 'Nous utilisons des cookies à des fins de statistiques et de publicité (Google Analytics &amp; Google Ads) afin d\'améliorer notre site et nos campagnes. En savoir plus dans notre <a href="cookiebeleid.html">politique en matière de cookies</a>.', accept: 'Accepter', deny: 'Refuser', aria: 'Consentement aux cookies' },
+    en: { text: 'We use cookies for analytics and advertising (Google Analytics &amp; Google Ads) to improve our website and campaigns. Read more in our <a href="cookiebeleid.html">cookie policy</a>.', accept: 'Accept', deny: 'Decline', aria: 'Cookie consent' }
+  };
+  function lang() { var l = window.__lang || (document.documentElement.getAttribute('lang') || 'nl').slice(0, 2); return TXT[l] ? l : 'nl'; }
   function showBar() {
     if (bar || !document.body) return;
+    var x = TXT[lang()];
     bar = document.createElement('div');
     bar.className = 'consent';
     bar.setAttribute('role', 'dialog');
-    bar.setAttribute('aria-label', 'Cookietoestemming');
+    bar.setAttribute('aria-label', x.aria);
     bar.innerHTML =
       '<div class="consent-inner">' +
-        '<p class="consent-text">We gebruiken cookies voor statistieken en advertenties (Google Analytics &amp; Google Ads) om onze website en campagnes te verbeteren. Lees meer in ons <a href="cookiebeleid.html">cookiebeleid</a>.</p>' +
+        '<p class="consent-text">' + x.text + '</p>' +
         '<div class="consent-actions">' +
-          '<button type="button" class="consent-btn consent-deny">Weigeren</button>' +
-          '<button type="button" class="consent-btn consent-allow">Accepteren</button>' +
+          '<button type="button" class="consent-btn consent-deny">' + x.deny + '</button>' +
+          '<button type="button" class="consent-btn consent-allow">' + x.accept + '</button>' +
         '</div>' +
       '</div>';
     document.body.appendChild(bar);

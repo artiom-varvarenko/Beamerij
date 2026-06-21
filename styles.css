@@ -59,8 +59,7 @@ h1 em,h2 em{color:var(--gold-light);font-style:italic}
 .text-link span{transition:transform .25s var(--ease)}
 .text-link:hover{border-color:var(--gold-light)}
 .text-link:hover span{transform:translateX(4px)}
-.wa-glyph{width:17px;height:17px;flex:0 0 17px;border-radius:50%;background:#25d366;position:relative}
-.wa-glyph::after{content:'';position:absolute;inset:4px 4px 3px;border-radius:50% 50% 50% 2px;background:#fff;transform:rotate(8deg)}
+.wa-glyph{width:19px;height:19px;flex:0 0 19px;display:block;color:currentColor}
 /* ---------- keyboard focus ---------- */
 :focus-visible{outline:2px solid var(--gold-light);outline-offset:3px;border-radius:4px}
 .button:focus-visible{transform:translateY(-3px);box-shadow:0 14px 34px rgba(227,162,75,.34)}
@@ -107,6 +106,18 @@ body.hide-announce .site-header{top:0}
 .nav-links>a:not(.button)::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:var(--gold-light);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 .nav-links>a:not(.button):hover{color:var(--gold-light)}
 .nav-links>a:not(.button):hover::after{transform:scaleX(1)}
+.lang-switch{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:30px}
+.lang-switch button{min-width:34px;min-height:30px;padding:5px 9px;background:none;border:0;border-radius:30px;color:#cfccc3;font:600 11px/1 var(--mono);letter-spacing:.04em;cursor:pointer;transition:background .25s var(--ease),color .25s var(--ease),transform .18s var(--ease)}
+.lang-switch button:hover{color:var(--gold-light)}
+.lang-switch button:active{transform:scale(.9)}
+.lang-switch button[aria-pressed="true"]{background:var(--gold);color:#1b160d}
+.lang-switch button[aria-pressed="true"]{animation:lang-pop .35s var(--ease)}
+.lang-switch button:focus-visible{outline-offset:1px}
+@keyframes lang-pop{0%{transform:scale(.82)}55%{transform:scale(1.08)}100%{transform:scale(1)}}
+/* language cross-fade: only translatable text reacts, layout/images stay put.
+   !important so the hero text (which has a higher-specificity reveal rule) fades too. */
+[data-i18n]{transition:opacity .26s var(--ease-soft),filter .26s var(--ease-soft)}
+body.lang-switching [data-i18n]{opacity:0!important;filter:blur(5px)!important}
 .nav-toggle{display:none;background:none;border:0;padding:8px;color:var(--text);min-width:44px;min-height:44px}
 .nav-toggle span:not(.sr-only){display:block;width:25px;height:1.5px;background:currentColor;border-radius:2px;margin:6px 0;transition:transform .3s var(--ease),opacity .3s}
 .nav-toggle[aria-expanded="true"] span:nth-of-type(1){transform:translateY(3.75px) rotate(45deg)}
@@ -130,8 +141,8 @@ body.hide-announce .site-header{top:0}
 .trust-row li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px rgba(227,162,75,.7)}
 .trust-row strong{color:var(--text)}
 .hero-scroll{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;color:#cfccc3;font:600 10px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase}
-.hero-scroll span{width:22px;height:34px;border:1px solid rgba(246,243,237,.45);border-radius:12px;position:relative}
-.hero-scroll span::after{content:'';position:absolute;left:50%;top:7px;width:3px;height:7px;border-radius:3px;background:var(--gold-light);transform:translateX(-50%);animation:scroll-dot 1.8s var(--ease) infinite}
+.hero-mouse{width:22px;height:34px;border:1px solid rgba(246,243,237,.45);border-radius:12px;position:relative}
+.hero-mouse::after{content:'';position:absolute;left:50%;top:7px;width:3px;height:7px;border-radius:3px;background:var(--gold-light);transform:translateX(-50%);animation:scroll-dot 1.8s var(--ease) infinite}
 @keyframes scroll-dot{0%{opacity:0;transform:translate(-50%,-4px)}40%{opacity:1}80%{opacity:0;transform:translate(-50%,11px)}100%{opacity:0}}
 
 /* hero entrance */
@@ -274,10 +285,10 @@ body.loaded .hero [data-hero]{opacity:1;transform:none}
 .faq-list summary{list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 0;cursor:pointer;font-size:15px;font-weight:bold;transition:color .25s}
 .faq-list summary::-webkit-details-marker{display:none}
 .faq-list summary:hover{color:var(--gold-light)}
-.faq-list summary span{position:relative;flex:0 0 16px;width:16px;height:16px;margin-top:4px}
-.faq-list summary span::before,.faq-list summary span::after{content:'';position:absolute;top:8px;left:1px;height:1.5px;width:14px;background:var(--gold-light);transition:transform .3s var(--ease)}
-.faq-list summary span::after{transform:rotate(90deg)}
-.faq-list details[open] summary span::after{transform:rotate(0)}
+.faq-list summary .faq-icon{position:relative;flex:0 0 16px;width:16px;height:16px;margin-top:4px}
+.faq-list summary .faq-icon::before,.faq-list summary .faq-icon::after{content:'';position:absolute;top:8px;left:1px;height:1.5px;width:14px;background:var(--gold-light);transition:transform .3s var(--ease)}
+.faq-list summary .faq-icon::after{transform:rotate(90deg)}
+.faq-list details[open] summary .faq-icon::after{transform:rotate(0)}
 .faq-list details[open] summary{color:var(--gold-light)}
 .faq-list details p{max-width:600px;color:var(--muted);font-size:13px;line-height:1.65;margin:0;padding:0 30px 20px 0;animation:faq-open .4s var(--ease)}
 @keyframes faq-open{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
@@ -337,10 +348,9 @@ body.loaded .hero [data-hero]{opacity:1;transform:none}
 .footer-legal a:hover{color:var(--gold-light)}
 
 /* ---------- floating actions ---------- */
-.whatsapp-float{position:fixed;z-index:40;right:20px;bottom:20px;display:flex;align-items:center;gap:9px;padding:12px 16px;color:#fff;background:#1eaf63;border:1px solid rgba(255,255,255,.27);border-radius:40px;box-shadow:0 10px 26px rgba(0,0,0,.34);font-size:12.5px;font-weight:600;transition:transform .25s var(--ease),box-shadow .25s}
-.whatsapp-float .wa-glyph{width:22px;height:22px;flex:0 0 22px;background:#fff}
-.whatsapp-float .wa-glyph::after{background:#1eaf63}
-.whatsapp-float:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(30,175,99,.4)}
+.whatsapp-float{position:fixed;z-index:40;right:20px;bottom:20px;display:flex;align-items:center;gap:10px;padding:12px 17px;color:#fff;background:#25d366;border:0;border-radius:40px;box-shadow:0 8px 24px rgba(37,211,102,.45),0 4px 10px rgba(0,0,0,.2);font-size:12.5px;font-weight:600;transition:transform .25s var(--ease),box-shadow .25s,background .2s}
+.whatsapp-float .wa-glyph{width:22px;height:22px;flex:0 0 22px;color:#fff}
+.whatsapp-float:hover{transform:translateY(-3px);background:#20bd5a;box-shadow:0 14px 32px rgba(37,211,102,.5),0 4px 10px rgba(0,0,0,.22)}
 .to-top{position:fixed;z-index:39;left:20px;bottom:20px;width:46px;height:46px;display:grid;place-items:center;color:var(--gold-light);background:rgba(25,25,23,.85);border:1px solid var(--line);border-radius:50%;font-size:18px;cursor:pointer;opacity:0;transform:translateY(14px);pointer-events:none;backdrop-filter:blur(8px);transition:opacity .3s,transform .3s var(--ease),border-color .25s,background .25s}
 .to-top.is-visible{opacity:1;transform:none;pointer-events:auto}
 .to-top:hover{border-color:var(--gold);background:rgba(35,30,21,.92)}
@@ -377,10 +387,11 @@ body.loaded .hero [data-hero]{opacity:1;transform:none}
 /* ============================================================
    Reveal animation system
    ============================================================ */
-html.js [data-reveal]{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-html.js [data-reveal="left"]{transform:translateX(-40px)}
-html.js [data-reveal="right"]{transform:translateX(40px)}
-html.js [data-reveal="scale"]{transform:scale(.94)}
+html.js [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease-soft),transform .9s var(--ease-soft);will-change:opacity,transform}
+html.js [data-reveal].is-in{will-change:auto}
+html.js [data-reveal="left"]{transform:translateX(-26px)}
+html.js [data-reveal="right"]{transform:translateX(26px)}
+html.js [data-reveal="scale"]{transform:scale(.96)}
 html.js [data-reveal="fade"]{transform:none}
 html.js [data-reveal].is-in{opacity:1;transform:none}
 html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}
@@ -412,7 +423,9 @@ html.js .reveal.is-visible{opacity:1;transform:none}
   .nav-links.is-open{transform:translateX(0)}
   .nav-links>a:not(.button){display:block;padding:17px 5px;font-size:18px;border-bottom:1px solid var(--line)}
   .nav-links>a:not(.button)::after{display:none}
-  .nav-links .button{margin-top:26px;min-height:48px;font-size:14px}
+  .nav-links .lang-switch{align-self:flex-start;margin:18px 0 2px}
+  .nav-links .lang-switch button{min-width:46px;min-height:40px;font-size:13px}
+  .nav-links .button{margin-top:22px;min-height:48px;font-size:14px}
   .hero{min-height:700px;min-height:92svh;padding:130px 0 70px;align-items:flex-end}
   .hero-image img{object-position:58% 50%}
   .hero-image::after{background:linear-gradient(90deg,rgba(11,11,10,.84),rgba(11,11,10,.5)),linear-gradient(0deg,#10100f,transparent 58%)}

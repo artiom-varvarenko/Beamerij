@@ -25,6 +25,10 @@
   <meta name="twitter:title" content="Beamerij | Groot scherm huren in Antwerpen">
   <meta name="twitter:description" content="Eén premium 4K big-screen set met een scherm van 200+ inch. Voor films, voetbal, gaming, huwelijken en bedrijfsevents. Levering en opbouw mogelijk.">
   <meta name="twitter:image" content="https://beamerij.be/images/movie-night.jpg">
+  <link rel="alternate" hreflang="nl-be" href="https://beamerij.be/">
+  <link rel="alternate" hreflang="fr-be" href="https://beamerij.be/?lang=fr">
+  <link rel="alternate" hreflang="en" href="https://beamerij.be/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://beamerij.be/">
   <link rel="stylesheet" href="styles.css">
   <!-- Google Consent Mode v2 — analytics & advertising cookies stay off until the visitor accepts -->
   <script>
@@ -41,18 +45,18 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Leveren jullie ook?","acceptedAnswer":{"@type":"Answer","text":"Ja. Bij full-service leveren, bouwen en halen we op in Antwerpen en de omliggende gemeenten. De levering is ook als extra bij andere pakketten mogelijk."}},{"@type":"Question","name":"Hoe lang duurt de opbouw?","acceptedAnswer":{"@type":"Answer","text":"Reken doorgaans op 30 tot 60 minuten, afhankelijk van de locatie en de gewenste opstelling. We plannen dit altijd ruim voor de start van je event."}},{"@type":"Question","name":"Wat als het regent of hard waait?","acceptedAnswer":{"@type":"Answer","text":"Veiligheid komt eerst. Bij ongeschikt weer bekijken we vooraf een binnenalternatief, een nieuw moment of een andere passende oplossing."}},{"@type":"Question","name":"Hoe werkt de waarborg?","acceptedAnswer":{"@type":"Answer","text":"De waarborg bedraagt € 300–400 voor alleen de beamer en € 500–750 voor de full set. In sommige gevallen kan dit ook met een identiteitskaart en ondertekende overeenkomst."}},{"@type":"Question","name":"Wat bij schade, verlies of diefstal?","acceptedAnswer":{"@type":"Answer","text":"De huurder is verantwoordelijk voor de set vanaf ontvangst tot ophaling. Schade, verlies of diefstal wordt volgens de huurvoorwaarden verrekend."}},{"@type":"Question","name":"Kan ik annuleren?","acceptedAnswer":{"@type":"Answer","text":"Dat kan volgens de afspraken in onze algemene voorwaarden. Omdat we een datum voor je reserveren, kunnen annuleringskosten gelden wanneer de annulering dicht bij het event gebeurt."}},{"@type":"Question","name":"Kan de set binnen én buiten?","acceptedAnswer":{"@type":"Answer","text":"Ja. Een tuin of terras is mooi, maar ook in een living, feestzaal of kantoorruimte maken we een indrukwekkende projectie. We stemmen de opstelling af op je ruimte."}},{"@type":"Question","name":"Wat hebben jullie nodig qua stroom?","acceptedAnswer":{"@type":"Answer","text":"Een normaal, veilig stopcontact in de buurt is meestal voldoende. Laat vooraf weten als de afstand groot is of als er geen stroomvoorziening op de locatie is."}}]}</script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Ga naar inhoud</a>
+  <a class="skip-link" href="#main-content" data-i18n="skip">Ga naar inhoud</a>
   <div class="scroll-progress" aria-hidden="true"><span data-progress-bar></span></div>
 
-  <a class="announce" href="#contact" data-announce aria-label="WK 2026 — reserveer je matchday-set">
+  <a class="announce" href="#contact" data-announce data-i18n-al="announce.aria" aria-label="WK 2026 — reserveer je matchday-set">
     <span class="announce-pulse" aria-hidden="true"></span>
-    <span><b>WK&nbsp;2026 is bezig</b> — kijk elke match op een scherm van 6&nbsp;meter. Reserveer je matchday-set.</span>
-    <span class="announce-cta" aria-hidden="true">Datum checken →</span>
+    <span data-i18n="announce.text"><b>WK&nbsp;2026 is bezig</b> — kijk elke match op een scherm van 6&nbsp;meter. Reserveer je matchday-set.</span>
+    <span class="announce-cta" aria-hidden="true" data-i18n="announce.cta">Datum checken →</span>
   </a>
 
   <header class="site-header" data-header>
     <nav class="container nav" aria-label="Hoofdnavigatie">
-      <a class="brand" href="#top" aria-label="Beamerij, naar de startpagina">
+      <a class="brand" href="#top" aria-label="Beamerij">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle class="lens" cx="13" cy="20" r="6.5" fill="currentColor"></circle>
@@ -63,14 +67,19 @@
         </span>
         <span class="brand-word"><span class="brand-main">beamer</span><span class="brand-suffix">ij</span></span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation"><span class="sr-only">Menu openen</span><span></span><span></span></button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation"><span class="sr-only" data-i18n="nav.menu">Menu openen</span><span></span><span></span></button>
       <div class="nav-links" id="main-navigation">
-        <a href="#gelegenheden">Gelegenheden</a>
-        <a href="#pakketten">Pakketten</a>
-        <a href="#werkwijze">Hoe het werkt</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <a class="button button-small" href="#contact">Offerte aanvragen <span aria-hidden="true">↗</span></a>
+        <a href="#gelegenheden" data-i18n="nav.occasions">Gelegenheden</a>
+        <a href="#pakketten" data-i18n="nav.packages">Pakketten</a>
+        <a href="#werkwijze" data-i18n="nav.how">Hoe het werkt</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <div class="lang-switch" role="group" aria-label="Taal / Langue / Language">
+          <button type="button" data-lang="nl" aria-pressed="true">NL</button>
+          <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="button button-small" href="#contact" data-i18n="nav.cta">Offerte aanvragen <span aria-hidden="true">↗</span></a>
       </div>
     </nav>
   </header>
@@ -83,25 +92,25 @@
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-beam" aria-hidden="true"></div>
       <div class="container hero-content">
-        <p class="eyebrow" data-hero="1"><span class="eyebrow-dot"></span>Premium beamerverhuur in Antwerpen</p>
-        <h1 id="hero-title" data-hero="2">Groot beeld.<br><em>Elk moment</em> bijzonder.</h1>
-        <p class="hero-copy" data-hero="3">Eén indrukwekkende 4K-set met een scherm van 200+ inch. Voor filmavonden, voetbal, gaming, huwelijken en bedrijfsevents. Wij leveren, bouwen op en ruimen weer op — jij geniet.</p>
+        <p class="eyebrow" data-hero="1"><span class="eyebrow-dot"></span><span data-i18n="hero.eyebrow">Premium beamerverhuur in Antwerpen</span></p>
+        <h1 id="hero-title" data-hero="2" data-i18n="hero.title">Groot beeld.<br><em>Elk moment</em> bijzonder.</h1>
+        <p class="hero-copy" data-hero="3" data-i18n="hero.copy">Eén indrukwekkende 4K-set met een scherm van 200+ inch. Voor filmavonden, voetbal, gaming, huwelijken en bedrijfsevents. Wij leveren, bouwen op en ruimen weer op — jij geniet.</p>
         <div class="hero-actions" data-hero="4">
-          <a class="button button-lg" href="#contact">Check je datum <span aria-hidden="true">↗</span></a>
-          <a class="button button-ghost button-lg" href="https://wa.me/32XXXXXXXXX?text=Hoi%20Beamerij%2C%20ik%20wil%20graag%20een%20datum%20aanvragen." target="_blank" rel="noopener noreferrer"><span class="wa-glyph" aria-hidden="true"></span>WhatsApp ons</a>
+          <a class="button button-lg" href="#contact" data-i18n="hero.cta1">Check je datum <span aria-hidden="true">↗</span></a>
+          <a class="button button-ghost button-lg" href="https://wa.me/32XXXXXXXXX?text=Hoi%20Beamerij%2C%20ik%20wil%20graag%20een%20datum%20aanvragen." target="_blank" rel="noopener noreferrer"><svg class="wa-glyph" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652a12.062 12.062 0 005.71 1.448h.005c6.582 0 11.946-5.335 11.949-11.893a11.821 11.821 0 00-3.487-8.464"/></svg><span data-i18n="hero.cta2">WhatsApp ons</span></a>
         </div>
         <ul class="trust-row" data-hero="5" aria-label="Kernpunten">
-          <li><strong>4K</strong> messcherp beeld</li>
-          <li><strong>200+ inch</strong> groot scherm</li>
-          <li><strong>Turnkey</strong> geleverd &amp; opgebouwd</li>
-          <li><strong>Geen btw</strong> alles inbegrepen</li>
+          <li data-i18n="hero.trust1"><strong>4K</strong> messcherp beeld</li>
+          <li data-i18n="hero.trust2"><strong>200+ inch</strong> groot scherm</li>
+          <li data-i18n="hero.trust3"><strong>Turnkey</strong> geleverd &amp; opgebouwd</li>
+          <li data-i18n="hero.trust4"><strong>Geen btw</strong> alles inbegrepen</li>
         </ul>
       </div>
-      <a class="hero-scroll" href="#gelegenheden" data-hero="6" aria-label="Scroll naar gelegenheden"><span></span>Ontdek</a>
+      <a class="hero-scroll" href="#gelegenheden" data-hero="6" data-i18n-al="hero.scrollaria" aria-label="Scroll naar gelegenheden"><span class="hero-mouse"></span><span data-i18n="hero.scroll">Ontdek</span></a>
     </section>
 
     <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
+      <div class="marquee-track" data-i18n="marquee">
         <span>Filmavonden</span><i>✦</i><span>Voetbal &amp; WK 2026</span><i>✦</i><span>Gaming &amp; esports</span><i>✦</i><span>Huwelijken</span><i>✦</i><span>Bedrijfsevents</span><i>✦</i><span>Communie &amp; verjaardag</span><i>✦</i><span>Eindejaar</span><i>✦</i><span>Home cinema</span><i>✦</i>
         <span>Filmavonden</span><i>✦</i><span>Voetbal &amp; WK 2026</span><i>✦</i><span>Gaming &amp; esports</span><i>✦</i><span>Huwelijken</span><i>✦</i><span>Bedrijfsevents</span><i>✦</i><span>Communie &amp; verjaardag</span><i>✦</i><span>Eindejaar</span><i>✦</i><span>Home cinema</span><i>✦</i>
       </div>
@@ -110,60 +119,60 @@
     <section class="section occasions" id="gelegenheden" aria-labelledby="occasions-title">
       <div class="container">
         <div class="section-intro split-intro" data-reveal>
-          <div><p class="eyebrow">Voor elk seizoen, elke setting</p><h2 id="occasions-title">Eén scherm.<br><em>Oneindig veel</em> momenten.</h2></div>
-          <p>Van een zwoele filmavond tot een knotsgekke WK-avond: onze premium set maakt van elke bijeenkomst een ervaring om over na te praten. Altijd voor privégebruik of een intern bedrijfsevent.</p>
+          <div><p class="eyebrow" data-i18n="occ.eyebrow">Voor elk seizoen, elke setting</p><h2 id="occasions-title" data-i18n="occ.title">Eén scherm.<br><em>Oneindig veel</em> momenten.</h2></div>
+          <p data-i18n="occ.intro">Van een zwoele filmavond tot een knotsgekke WK-avond: onze premium set maakt van elke bijeenkomst een ervaring om over na te praten. Altijd voor privégebruik of een intern bedrijfsevent.</p>
         </div>
         <div class="occasions-grid" data-reveal-group>
-          <article class="occasion-card card-wide" data-reveal="up"><picture><source type="image/webp" srcset="images/football-terras.webp"><img src="images/football-terras.jpg" width="1600" height="900" alt="Vrienden kijken voetbal op een groot scherm op een modern terras tijdens een zomeravond" loading="lazy"></picture><div class="occasion-overlay"><p>01 — Zwoele zomeravonden</p><h3>Voetbal &amp; WK 2026</h3><span>Het stadiongevoel, gewoon op je eigen terras of in de tuin.</span></div><span class="occasion-tag">Topper</span></article>
-          <article class="occasion-card" data-reveal="up"><picture><source type="image/webp" srcset="images/gaming.webp"><img src="images/gaming.jpg" width="1500" height="844" alt="Gamingavond op een scherp 4K projectiescherm met sfeerverlichting" loading="lazy"></picture><div class="occasion-overlay"><p>02 — Ready player one</p><h3>Gaming &amp; esports</h3><span>4K-beeld en lage inputlag: groot spelen zonder compromis.</span></div></article>
-          <article class="occasion-card" data-reveal="up"><picture><source type="image/webp" srcset="images/wedding.webp"><img src="images/wedding.jpg" width="1500" height="1000" alt="Huwelijksdiner met foto's van het koppel geprojecteerd op een groot scherm" loading="lazy"></picture><div class="occasion-overlay"><p>03 — Een grote dag</p><h3>Huwelijken &amp; feesten</h3><span>Foto's, video en sfeerbeelden die je gasten raken.</span></div></article>
-          <article class="occasion-card" data-reveal="up"><picture><source type="image/webp" srcset="images/business.webp"><img src="images/business.jpg" width="1500" height="844" alt="Interne bedrijfspresentatie op een groot scherm voor een zittend publiek" loading="lazy"></picture><div class="occasion-overlay"><p>04 — Intern bedrijfsevent</p><h3>Presentaties &amp; gala's</h3><span>Town halls, launches en awards met zichtbaar verschil.</span></div></article>
-          <article class="occasion-card" data-reveal="up"><picture><source type="image/webp" srcset="images/football-garden.webp"><img src="images/football-garden.jpg" width="1500" height="844" alt="Vrienden juichen tijdens een voetbalwedstrijd op een groot projectiescherm in de tuin" loading="lazy"></picture><div class="occasion-overlay"><p>05 — Samen supporteren</p><h3>Sport in de tuin</h3><span>Vrienden, drankjes en de match op groot scherm onder de sterren.</span></div></article>
-          <article class="occasion-card card-wide" data-reveal="up"><picture><source type="image/webp" srcset="images/movie-night.webp"><img src="images/movie-night.jpg" width="1448" height="1086" alt="Sfeervolle private filmavond met een groot opblaasbaar scherm in een tuin bij avond" loading="lazy"></picture><div class="occasion-overlay"><p>06 — Privé in de tuin</p><h3>Tuincinema &amp; filmavonden</h3><span>Film, dekens, vrienden en een scherm dat iedereen bijblijft.</span></div></article>
+          <article class="occasion-card card-wide" data-reveal="up"><picture><source type="image/webp" srcset="images/football-terras.webp"><img src="images/football-terras.jpg" width="1600" height="900" alt="Vrienden kijken voetbal op een groot scherm op een modern terras tijdens een zomeravond" loading="lazy"></picture><div class="occasion-overlay"><p data-i18n="occ.1.k">01 — Zwoele zomeravonden</p><h3 data-i18n="occ.1.t">Voetbal &amp; WK 2026</h3><span data-i18n="occ.1.d">Het stadiongevoel, gewoon op je eigen terras of in de tuin.</span></div><span class="occasion-tag" data-i18n="occ.tag">Topper</span></article>
+          <article class="occasion-card" data-reveal="up"><picture><source type="image/webp" srcset="images/gaming.webp"><img src="images/gaming.jpg" width="1500" height="844" alt="Gamingavond op een scherp 4K projectiescherm met sfeerverlichting" loading="lazy"></picture><div class="occasion-overlay"><p data-i18n="occ.2.k">02 — Ready player one</p><h3 data-i18n="occ.2.t">Gaming &amp; esports</h3><span data-i18n="occ.2.d">4K-beeld en lage inputlag: groot spelen zonder compromis.</span></div></article>
+          <article class="occasion-card" data-reveal="up"><picture><source type="image/webp" srcset="images/wedding.webp"><img src="images/wedding.jpg" width="1500" height="1000" alt="Huwelijksdiner met foto's van het koppel geprojecteerd op een groot scherm" loading="lazy"></picture><div class="occasion-overlay"><p data-i18n="occ.3.k">03 — Een grote dag</p><h3 data-i18n="occ.3.t">Huwelijken &amp; feesten</h3><span data-i18n="occ.3.d">Foto's, video en sfeerbeelden die je gasten raken.</span></div></article>
+          <article class="occasion-card" data-reveal="up"><picture><source type="image/webp" srcset="images/business.webp"><img src="images/business.jpg" width="1500" height="844" alt="Interne bedrijfspresentatie op een groot scherm voor een zittend publiek" loading="lazy"></picture><div class="occasion-overlay"><p data-i18n="occ.4.k">04 — Intern bedrijfsevent</p><h3 data-i18n="occ.4.t">Presentaties &amp; gala's</h3><span data-i18n="occ.4.d">Town halls, launches en awards met zichtbaar verschil.</span></div></article>
+          <article class="occasion-card" data-reveal="up"><picture><source type="image/webp" srcset="images/football-garden.webp"><img src="images/football-garden.jpg" width="1500" height="844" alt="Vrienden juichen tijdens een voetbalwedstrijd op een groot projectiescherm in de tuin" loading="lazy"></picture><div class="occasion-overlay"><p data-i18n="occ.5.k">05 — Samen supporteren</p><h3 data-i18n="occ.5.t">Sport in de tuin</h3><span data-i18n="occ.5.d">Vrienden, drankjes en de match op groot scherm onder de sterren.</span></div></article>
+          <article class="occasion-card card-wide" data-reveal="up"><picture><source type="image/webp" srcset="images/movie-night.webp"><img src="images/movie-night.jpg" width="1448" height="1086" alt="Sfeervolle private filmavond met een groot opblaasbaar scherm in een tuin bij avond" loading="lazy"></picture><div class="occasion-overlay"><p data-i18n="occ.6.k">06 — Privé in de tuin</p><h3 data-i18n="occ.6.t">Tuincinema &amp; filmavonden</h3><span data-i18n="occ.6.d">Film, dekens, vrienden en een scherm dat iedereen bijblijft.</span></div></article>
         </div>
-        <p class="occasions-foot" data-reveal>Ook voor <strong>communie &amp; lentefeest</strong>, <strong>verjaardagen</strong>, <strong>Sinterklaas &amp; eindejaar</strong> en een <strong>indoor home cinema</strong>. <a href="#contact" class="text-link">Vertel ons jouw plan <span>→</span></a></p>
+        <p class="occasions-foot" data-reveal data-i18n="occ.foot">Ook voor <strong>communie &amp; lentefeest</strong>, <strong>verjaardagen</strong>, <strong>Sinterklaas &amp; eindejaar</strong> en een <strong>indoor home cinema</strong>. <a href="#contact" class="text-link">Vertel ons jouw plan <span>→</span></a></p>
       </div>
     </section>
 
     <section class="section usp" aria-label="Waarom Beamerij">
       <div class="container usp-grid" data-reveal-group>
-        <div class="usp-card" data-reveal="up"><span class="usp-num">01</span><h3>Echt groot beeld</h3><p>Een opblaasbaar scherm van 200+ inch en een 4K-laserprojector van ca. 5.700 lumen. Helder, ook bij schemer.</p></div>
-        <div class="usp-card" data-reveal="up"><span class="usp-num">02</span><h3>Volledig ontzorgd</h3><p>Levering, opbouw, bediening en ophaling mogelijk. Jij hoeft niets te sleuren of in te stellen.</p></div>
-        <div class="usp-card" data-reveal="up"><span class="usp-num">03</span><h3>Lokaal &amp; persoonlijk</h3><p>Gevestigd in Antwerpen. Korte lijnen, persoonlijk contact en meestal antwoord binnen één werkdag.</p></div>
-        <div class="usp-card" data-reveal="up"><span class="usp-num">04</span><h3>Eén heldere prijs</h3><p>Vrijgesteld van btw. Wat je ziet, betaal je — alles inbegrepen, geen verrassingen achteraf.</p></div>
+        <div class="usp-card" data-reveal="up"><span class="usp-num">01</span><h3 data-i18n="usp.1.t">Echt groot beeld</h3><p data-i18n="usp.1.d">Een opblaasbaar scherm van 200+ inch en een 4K-laserprojector van ca. 5.700 lumen. Helder, ook bij schemer.</p></div>
+        <div class="usp-card" data-reveal="up"><span class="usp-num">02</span><h3 data-i18n="usp.2.t">Volledig ontzorgd</h3><p data-i18n="usp.2.d">Levering, opbouw, bediening en ophaling mogelijk. Jij hoeft niets te sleuren of in te stellen.</p></div>
+        <div class="usp-card" data-reveal="up"><span class="usp-num">03</span><h3 data-i18n="usp.3.t">Lokaal &amp; persoonlijk</h3><p data-i18n="usp.3.d">Gevestigd in Antwerpen. Korte lijnen, persoonlijk contact en meestal antwoord binnen één werkdag.</p></div>
+        <div class="usp-card" data-reveal="up"><span class="usp-num">04</span><h3 data-i18n="usp.4.t">Eén heldere prijs</h3><p data-i18n="usp.4.d">Vrijgesteld van btw. Wat je ziet, betaal je — alles inbegrepen, geen verrassingen achteraf.</p></div>
       </div>
     </section>
 
     <section class="section packages" id="pakketten" aria-labelledby="packages-title">
       <div class="container">
         <div class="section-intro" data-reveal>
-          <p class="eyebrow">Helder geprijsd</p>
-          <h2 id="packages-title">Kies hoeveel<br><em>ontzorging</em> je wil.</h2>
-          <p>Alle prijzen zijn eindprijzen. Beamerij is vrijgesteld van btw: geen verrassingen, wel een volledig pakket.</p>
-          <p class="seo-copy">Een beamer huren in Antwerpen, een groot scherm of projectiescherm huren, of meteen beamer en scherm huren voor een private outdoor cinema: je krijgt één premium oplossing. Ook een opblaasbaar scherm huren kan volledig zorgeloos.</p>
+          <p class="eyebrow" data-i18n="pkg.eyebrow">Helder geprijsd</p>
+          <h2 id="packages-title" data-i18n="pkg.title">Kies hoeveel<br><em>ontzorging</em> je wil.</h2>
+          <p data-i18n="pkg.intro">Alle prijzen zijn eindprijzen. Beamerij is vrijgesteld van btw: geen verrassingen, wel een volledig pakket.</p>
+          <p class="seo-copy" data-i18n="pkg.seo">Een beamer huren in Antwerpen, een groot scherm of projectiescherm huren, of meteen beamer en scherm huren voor een private outdoor cinema: je krijgt één premium oplossing. Ook een opblaasbaar scherm huren kan volledig zorgeloos.</p>
         </div>
         <div class="package-grid" data-reveal-group>
-          <article class="package-card" data-reveal="up"><div class="package-label">Compact</div><h3>Alleen beamer</h3><p class="package-description">Voor wie zelf een scherm of witte wand heeft.</p><p class="price"><span>vanaf</span> € 70 <small>/ avond</small></p><p class="price-sub">€ 100 / weekend</p><ul><li>4K laserprojector</li><li>Kabels, afstandsbediening &amp; stroom</li><li>Ophalen op afspraak</li></ul><a href="#contact" class="text-link">Vraag beschikbaarheid <span>→</span></a></article>
-          <article class="package-card package-featured" data-reveal="up"><div class="featured-tag">Meest gekozen</div><div class="package-label">De complete set</div><h3>Full big-screen set</h3><p class="package-description">Jouw eigen spectaculaire cinema of viewing party.</p><p class="price"><span>vanaf</span> € 175 <small>/ avond</small></p><p class="price-sub">€ 250 / weekend</p><ul><li>200+ inch opblaasbaar projectiescherm + blower</li><li>4K projector, geluid &amp; stands</li><li>Heldere self-setup briefing</li></ul><a href="#contact" class="text-link">Vraag beschikbaarheid <span>→</span></a></article>
-          <article class="package-card" data-reveal="up"><div class="package-label">Volledig zorgeloos</div><h3>Full-service event</h3><p class="package-description">Van aankomst tot afbouw: jij hoeft niets te doen.</p><p class="price"><span>vanaf</span> € 295</p><p class="price-sub">Antwerpen + 15 km</p><ul><li>Alles uit pakket B</li><li>Levering, opbouw &amp; ophaling</li><li>Bediening tijdens je event</li></ul><a href="#contact" class="text-link">Vraag je offerte <span>→</span></a></article>
-          <article class="package-card package-dark" data-reveal="up"><div class="package-label">Op maat</div><h3>Business &amp; meerdaags</h3><p class="package-description">Voor interne events, meerdaagse huur of extra technische noden.</p><p class="price"><span>vanaf</span> € 450</p><p class="price-sub">prijs op aanvraag</p><ul><li>Technische afstemming vooraf</li><li>Flexibele huurperiode</li><li>Extra begeleiding mogelijk</li></ul><a href="#contact" class="text-link">Bespreek je event <span>→</span></a></article>
+          <article class="package-card" data-reveal="up"><div class="package-label" data-i18n="pkg.1.label">Compact</div><h3 data-i18n="pkg.1.t">Alleen beamer</h3><p class="package-description" data-i18n="pkg.1.d">Voor wie zelf een scherm of witte wand heeft.</p><p class="price"><span data-i18n="pkg.from">vanaf</span> € 70 <small data-i18n="pkg.night">/ avond</small></p><p class="price-sub" data-i18n="pkg.1.sub">€ 100 / weekend</p><ul><li data-i18n="pkg.1.f1">4K laserprojector</li><li data-i18n="pkg.1.f2">Kabels, afstandsbediening &amp; stroom</li><li data-i18n="pkg.1.f3">Ophalen op afspraak</li></ul><a href="#contact" class="text-link" data-i18n="pkg.avail">Vraag beschikbaarheid <span>→</span></a></article>
+          <article class="package-card package-featured" data-reveal="up"><div class="featured-tag" data-i18n="pkg.featured">Meest gekozen</div><div class="package-label" data-i18n="pkg.2.label">De complete set</div><h3 data-i18n="pkg.2.t">Full big-screen set</h3><p class="package-description" data-i18n="pkg.2.d">Jouw eigen spectaculaire cinema of viewing party.</p><p class="price"><span data-i18n="pkg.from">vanaf</span> € 175 <small data-i18n="pkg.night">/ avond</small></p><p class="price-sub" data-i18n="pkg.2.sub">€ 250 / weekend</p><ul><li data-i18n="pkg.2.f1">200+ inch opblaasbaar projectiescherm + blower</li><li data-i18n="pkg.2.f2">4K projector, geluid &amp; stands</li><li data-i18n="pkg.2.f3">Heldere self-setup briefing</li></ul><a href="#contact" class="text-link" data-i18n="pkg.avail">Vraag beschikbaarheid <span>→</span></a></article>
+          <article class="package-card" data-reveal="up"><div class="package-label" data-i18n="pkg.3.label">Volledig zorgeloos</div><h3 data-i18n="pkg.3.t">Full-service event</h3><p class="package-description" data-i18n="pkg.3.d">Van aankomst tot afbouw: jij hoeft niets te doen.</p><p class="price"><span data-i18n="pkg.from">vanaf</span> € 295</p><p class="price-sub" data-i18n="pkg.3.sub">Antwerpen + 15 km</p><ul><li data-i18n="pkg.3.f1">Alles uit pakket B</li><li data-i18n="pkg.3.f2">Levering, opbouw &amp; ophaling</li><li data-i18n="pkg.3.f3">Bediening tijdens je event</li></ul><a href="#contact" class="text-link" data-i18n="pkg.quote">Vraag je offerte <span>→</span></a></article>
+          <article class="package-card package-dark" data-reveal="up"><div class="package-label" data-i18n="pkg.4.label">Op maat</div><h3 data-i18n="pkg.4.t">Business &amp; meerdaags</h3><p class="package-description" data-i18n="pkg.4.d">Voor interne events, meerdaagse huur of extra technische noden.</p><p class="price"><span data-i18n="pkg.from">vanaf</span> € 450</p><p class="price-sub" data-i18n="pkg.4.sub">prijs op aanvraag</p><ul><li data-i18n="pkg.4.f1">Technische afstemming vooraf</li><li data-i18n="pkg.4.f2">Flexibele huurperiode</li><li data-i18n="pkg.4.f3">Extra begeleiding mogelijk</li></ul><a href="#contact" class="text-link" data-i18n="pkg.discuss">Bespreek je event <span>→</span></a></article>
         </div>
         <div class="pricing-notes" data-reveal-group>
-          <div data-reveal="up"><span class="note-icon">+</span><p><strong>Handige extra's</strong><br>Levering, opbouw &amp; ophaling € 50–80 · Operator ter plaatse (pakket A &amp; B) € 100–125 · Extra speaker of bekabeling € 15–25</p></div>
-          <div data-reveal="up"><span class="note-icon">€</span><p><strong>Waarborg</strong><br>Beamer € 300–400 · Full set € 500–750, of identiteitskaart + ondertekende overeenkomst.</p></div>
-          <div data-reveal="up"><span class="note-icon">✓</span><p><strong>Alles inbegrepen, geen btw</strong><br>Je ziet meteen wat je betaalt. Geen btw wordt aangerekend.</p></div>
+          <div data-reveal="up"><span class="note-icon">+</span><p data-i18n="pkg.note1"><strong>Handige extra's</strong><br>Levering, opbouw &amp; ophaling € 50–80 · Operator ter plaatse (pakket A &amp; B) € 100–125 · Extra speaker of bekabeling € 15–25</p></div>
+          <div data-reveal="up"><span class="note-icon">€</span><p data-i18n="pkg.note2"><strong>Waarborg</strong><br>Beamer € 300–400 · Full set € 500–750, of identiteitskaart + ondertekende overeenkomst.</p></div>
+          <div data-reveal="up"><span class="note-icon">✓</span><p data-i18n="pkg.note3"><strong>Alles inbegrepen, geen btw</strong><br>Je ziet meteen wat je betaalt. Geen btw wordt aangerekend.</p></div>
         </div>
       </div>
     </section>
 
     <section class="section process" id="werkwijze" aria-labelledby="process-title">
       <div class="container">
-        <div class="section-intro centered" data-reveal><p class="eyebrow">Zo eenvoudig is het</p><h2 id="process-title">Van idee naar<br><em>kippenvel.</em></h2></div>
+        <div class="section-intro centered" data-reveal><p class="eyebrow" data-i18n="proc.eyebrow">Zo eenvoudig is het</p><h2 id="process-title" data-i18n="proc.title">Van idee naar<br><em>kippenvel.</em></h2></div>
         <ol class="process-list" data-reveal-group>
-          <li data-reveal="up"><span>01</span><div><h3>Aanvraag</h3><p>Vertel ons wanneer, waar en waarvoor je het scherm wil inzetten.</p></div></li>
-          <li data-reveal="up"><span>02</span><div><h3>Bevestiging</h3><p>Je krijgt snel een helder voorstel met alle praktische afspraken.</p></div></li>
-          <li data-reveal="up"><span>03</span><div><h3>Wij leveren &amp; installeren</h3><p>Bij full-service zetten we alles veilig en perfect op zijn plaats.</p></div></li>
-          <li data-reveal="up"><span>04</span><div><h3>Jij geniet. Wij halen op.</h3><p>Na een onvergetelijke avond nemen wij de afbouw weer uit handen.</p></div></li>
+          <li data-reveal="up"><span>01</span><div><h3 data-i18n="proc.1.t">Aanvraag</h3><p data-i18n="proc.1.d">Vertel ons wanneer, waar en waarvoor je het scherm wil inzetten.</p></div></li>
+          <li data-reveal="up"><span>02</span><div><h3 data-i18n="proc.2.t">Bevestiging</h3><p data-i18n="proc.2.d">Je krijgt snel een helder voorstel met alle praktische afspraken.</p></div></li>
+          <li data-reveal="up"><span>03</span><div><h3 data-i18n="proc.3.t">Wij leveren &amp; installeren</h3><p data-i18n="proc.3.d">Bij full-service zetten we alles veilig en perfect op zijn plaats.</p></div></li>
+          <li data-reveal="up"><span>04</span><div><h3 data-i18n="proc.4.t">Jij geniet. Wij halen op.</h3><p data-i18n="proc.4.d">Na een onvergetelijke avond nemen wij de afbouw weer uit handen.</p></div></li>
         </ol>
       </div>
     </section>
@@ -171,37 +180,37 @@
     <section class="section specs" aria-labelledby="specs-title">
       <div class="container">
         <div class="specs-head" data-reveal>
-          <div><p class="eyebrow">Wat zit erbij?</p><h2 id="specs-title">Alles voor een<br><em>indrukwekkend</em> beeld.</h2></div>
-          <p>Geen losse puzzelstukken. Onze set is zorgvuldig gekozen om binnen én buiten een groots moment neer te zetten.</p>
+          <div><p class="eyebrow" data-i18n="specs.eyebrow">Wat zit erbij?</p><h2 id="specs-title" data-i18n="specs.title">Alles voor een<br><em>indrukwekkend</em> beeld.</h2></div>
+          <p data-i18n="specs.intro">Geen losse puzzelstukken. Onze set is zorgvuldig gekozen om binnen én buiten een groots moment neer te zetten.</p>
         </div>
         <figure class="specs-feature" data-reveal="scale">
           <picture><source type="image/webp" srcset="images/gaming.webp"><img src="images/gaming.jpg" width="1500" height="844" alt="Een groot Beamerij-scherm met een messcherp 4K-beeld, projector op statief en een geluidsset in een woonkamer" loading="lazy"></picture>
-          <figcaption>Één premium set. Volledig afgestemd.</figcaption>
+          <figcaption data-i18n="specs.caption">Één premium set. Volledig afgestemd.</figcaption>
         </figure>
         <dl class="spec-list" data-reveal-group>
-          <div class="spec-hero" data-reveal="up"><dt data-count="200" data-suffix="&quot;">200&quot;</dt><dd>Opblaasbaar projectiescherm met stille blower</dd></div>
-          <div data-reveal="up"><dt>4K</dt><dd>Laserprojector van ca. 5.700 lumen, ook bij schemer helder</dd></div>
-          <div data-reveal="up"><dt>Audio</dt><dd>Krachtige geluidsset met alle nodige bekabeling</dd></div>
-          <div data-reveal="up"><dt>Flexibel</dt><dd>Voor tuin, terras, feestzaal, living of bedrijfsruimte</dd></div>
+          <div class="spec-hero" data-reveal="up"><dt data-count="200" data-suffix="&quot;">200&quot;</dt><dd data-i18n="specs.1">Opblaasbaar projectiescherm met stille blower</dd></div>
+          <div data-reveal="up"><dt>4K</dt><dd data-i18n="specs.2">Laserprojector van ca. 5.700 lumen, ook bij schemer helder</dd></div>
+          <div data-reveal="up"><dt data-i18n="specs.3.t">Audio</dt><dd data-i18n="specs.3">Krachtige geluidsset met alle nodige bekabeling</dd></div>
+          <div data-reveal="up"><dt data-i18n="specs.4.t">Flexibel</dt><dd data-i18n="specs.4">Voor tuin, terras, feestzaal, living of bedrijfsruimte</dd></div>
         </dl>
-        <p class="weather-note" data-reveal><strong>Goed om te weten:</strong> buitenopstellingen zijn weersafhankelijk. Bij regen of stevige wind zoeken we samen tijdig naar een veilige oplossing.</p>
+        <p class="weather-note" data-reveal data-i18n="specs.weather"><strong>Goed om te weten:</strong> buitenopstellingen zijn weersafhankelijk. Bij regen of stevige wind zoeken we samen tijdig naar een veilige oplossing.</p>
       </div>
     </section>
 
     <section class="atmosphere" aria-labelledby="atmo-title">
       <div class="atmosphere-image" aria-hidden="true" data-parallax="0.12"><picture><source type="image/webp" srcset="images/wedding.webp"><img src="images/wedding.jpg" width="1500" height="1000" alt="" loading="lazy"></picture></div>
       <div class="container atmosphere-content" data-reveal>
-        <p class="eyebrow">Groot beeld, grote herinneringen</p>
-        <h2 id="atmo-title">Sommige avonden<br><em>blijven plakken.</em></h2>
-        <p>Een scherp beeld van 200+ inch verandert een gewone avond in iets waar je gasten nog maanden over praten. Wij zorgen voor de techniek. Jij voor het moment.</p>
-        <a class="button button-lg" href="#contact">Reserveer jouw avond <span aria-hidden="true">↗</span></a>
+        <p class="eyebrow" data-i18n="atmo.eyebrow">Groot beeld, grote herinneringen</p>
+        <h2 id="atmo-title" data-i18n="atmo.title">Sommige avonden<br><em>blijven plakken.</em></h2>
+        <p data-i18n="atmo.copy">Een scherp beeld van 200+ inch verandert een gewone avond in iets waar je gasten nog maanden over praten. Wij zorgen voor de techniek. Jij voor het moment.</p>
+        <a class="button button-lg" href="#contact" data-i18n="atmo.cta">Reserveer jouw avond <span aria-hidden="true">↗</span></a>
       </div>
     </section>
 
     <section class="section service-area" aria-labelledby="area-title">
       <div class="container area-layout">
-        <div data-reveal="left"><p class="eyebrow">Lokaal en dichtbij</p><h2 id="area-title">Antwerpen<br><em>en omstreken.</em></h2></div>
-        <div class="area-copy" data-reveal="right"><p>Full-service levering en opbouw in Antwerpen en binnen ongeveer 15 km. Verder weg? Vraag gerust, dan bekijken we wat mogelijk is.</p>
+        <div data-reveal="left"><p class="eyebrow" data-i18n="area.eyebrow">Lokaal en dichtbij</p><h2 id="area-title" data-i18n="area.title">Antwerpen<br><em>en omstreken.</em></h2></div>
+        <div class="area-copy" data-reveal="right"><p data-i18n="area.copy">Full-service levering en opbouw in Antwerpen en binnen ongeveer 15 km. Verder weg? Vraag gerust, dan bekijken we wat mogelijk is.</p>
           <ul class="municipalities"><li>Antwerpen</li><li>Berchem</li><li>Borgerhout</li><li>Deurne</li><li>Mortsel</li><li>Edegem</li><li>Wilrijk</li><li>Hoboken</li><li>Ekeren</li><li>Brasschaat</li><li>Schoten</li><li>Wijnegem</li><li>Kontich</li><li>Aartselaar</li><li>Boechout</li></ul>
         </div>
       </div>
@@ -209,16 +218,16 @@
 
     <section class="section faq" id="faq" aria-labelledby="faq-title">
       <div class="container faq-layout">
-        <div data-reveal="left"><p class="eyebrow">Eerst even weten</p><h2 id="faq-title">Veelgestelde<br><em>vragen.</em></h2><p>Staat je vraag er niet bij? Stuur ons een bericht, dan denken we concreet met je mee.</p><a href="#contact" class="text-link">Neem contact op <span>→</span></a></div>
+        <div data-reveal="left"><p class="eyebrow" data-i18n="faq.eyebrow">Eerst even weten</p><h2 id="faq-title" data-i18n="faq.title">Veelgestelde<br><em>vragen.</em></h2><p data-i18n="faq.intro">Staat je vraag er niet bij? Stuur ons een bericht, dan denken we concreet met je mee.</p><a href="#contact" class="text-link" data-i18n="faq.link">Neem contact op <span>→</span></a></div>
         <div class="faq-list" data-reveal="right">
-          <details><summary>Leveren jullie ook?<span aria-hidden="true"></span></summary><p>Ja. Bij full-service leveren, bouwen en halen we op in Antwerpen en de omliggende gemeenten. De levering is ook als extra bij andere pakketten mogelijk.</p></details>
-          <details><summary>Hoe lang duurt de opbouw?<span aria-hidden="true"></span></summary><p>Reken doorgaans op 30 tot 60 minuten, afhankelijk van de locatie en de gewenste opstelling. We plannen dit altijd ruim voor de start van je event.</p></details>
-          <details><summary>Wat als het regent of hard waait?<span aria-hidden="true"></span></summary><p>Veiligheid komt eerst. Bij ongeschikt weer bekijken we vooraf een binnenalternatief, een nieuw moment of een andere passende oplossing.</p></details>
-          <details><summary>Hoe werkt de waarborg?<span aria-hidden="true"></span></summary><p>De waarborg bedraagt € 300–400 voor alleen de beamer en € 500–750 voor de full set. In sommige gevallen kan dit ook met een identiteitskaart en ondertekende overeenkomst.</p></details>
-          <details><summary>Wat bij schade, verlies of diefstal?<span aria-hidden="true"></span></summary><p>De huurder is verantwoordelijk voor de set vanaf ontvangst tot ophaling. Schade, verlies of diefstal wordt volgens de huurvoorwaarden verrekend.</p></details>
-          <details><summary>Kan ik annuleren?<span aria-hidden="true"></span></summary><p>Dat kan volgens de afspraken in onze algemene voorwaarden. Omdat we een datum voor je reserveren, kunnen annuleringskosten gelden wanneer de annulering dicht bij het event gebeurt.</p></details>
-          <details><summary>Kan de set binnen én buiten?<span aria-hidden="true"></span></summary><p>Ja. Een tuin of terras is mooi, maar ook in een living, feestzaal of kantoorruimte maken we een indrukwekkende projectie. We stemmen de opstelling af op je ruimte.</p></details>
-          <details><summary>Wat hebben jullie nodig qua stroom?<span aria-hidden="true"></span></summary><p>Een normaal, veilig stopcontact in de buurt is meestal voldoende. Laat vooraf weten als de afstand groot is of als er geen stroomvoorziening op de locatie is.</p></details>
+          <details><summary><span data-i18n="faq.1.q">Leveren jullie ook?</span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.1.a">Ja. Bij full-service leveren, bouwen en halen we op in Antwerpen en de omliggende gemeenten. De levering is ook als extra bij andere pakketten mogelijk.</p></details>
+          <details><summary><span data-i18n="faq.2.q">Hoe lang duurt de opbouw?</span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.2.a">Reken doorgaans op 30 tot 60 minuten, afhankelijk van de locatie en de gewenste opstelling. We plannen dit altijd ruim voor de start van je event.</p></details>
+          <details><summary><span data-i18n="faq.3.q">Wat als het regent of hard waait?</span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.3.a">Veiligheid komt eerst. Bij ongeschikt weer bekijken we vooraf een binnenalternatief, een nieuw moment of een andere passende oplossing.</p></details>
+          <details><summary><span data-i18n="faq.4.q">Hoe werkt de waarborg?</span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.4.a">De waarborg bedraagt € 300–400 voor alleen de beamer en € 500–750 voor de full set. In sommige gevallen kan dit ook met een identiteitskaart en ondertekende overeenkomst.</p></details>
+          <details><summary><span data-i18n="faq.5.q">Wat bij schade, verlies of diefstal?</span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.5.a">De huurder is verantwoordelijk voor de set vanaf ontvangst tot ophaling. Schade, verlies of diefstal wordt volgens de huurvoorwaarden verrekend.</p></details>
+          <details><summary><span data-i18n="faq.6.q">Kan ik annuleren?</span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.6.a">Dat kan volgens de afspraken in onze algemene voorwaarden. Omdat we een datum voor je reserveren, kunnen annuleringskosten gelden wanneer de annulering dicht bij het event gebeurt.</p></details>
+          <details><summary><span data-i18n="faq.7.q">Kan de set binnen én buiten?</span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.7.a">Ja. Een tuin of terras is mooi, maar ook in een living, feestzaal of kantoorruimte maken we een indrukwekkende projectie. We stemmen de opstelling af op je ruimte.</p></details>
+          <details><summary><span data-i18n="faq.8.q">Wat hebben jullie nodig qua stroom?</span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.8.a">Een normaal, veilig stopcontact in de buurt is meestal voldoende. Laat vooraf weten als de afstand groot is of als er geen stroomvoorziening op de locatie is.</p></details>
         </div>
       </div>
     </section>
@@ -227,29 +236,29 @@
       <div class="contact-background" aria-hidden="true"></div>
       <div class="container contact-layout">
         <div class="contact-intro" data-reveal="left">
-          <p class="eyebrow">Jouw datum, jouw moment</p>
-          <h2 id="contact-title">Maak het<br><em>onvergetelijk.</em></h2>
-          <p>Vraag vrijblijvend je datum aan. We antwoorden snel met beschikbaarheid en een voorstel dat past bij je plan.</p>
+          <p class="eyebrow" data-i18n="contact.eyebrow">Jouw datum, jouw moment</p>
+          <h2 id="contact-title" data-i18n="contact.title">Maak het<br><em>onvergetelijk.</em></h2>
+          <p data-i18n="contact.copy">Vraag vrijblijvend je datum aan. We antwoorden snel met beschikbaarheid en een voorstel dat past bij je plan.</p>
           <div class="contact-channels">
             <a class="contact-email" href="mailto:info@beamerij.be">info@beamerij.be <span>↗</span></a>
-            <a class="contact-phone" href="tel:+32XXXXXXXXX"><span class="phone-glyph" aria-hidden="true"></span>Bel ons even</a>
+            <a class="contact-phone" href="tel:+32XXXXXXXXX"><span class="phone-glyph" aria-hidden="true"></span><span data-i18n="contact.phone">Bel ons even</span></a>
           </div>
-          <p class="response-note">Meestal antwoord binnen 1 werkdag.</p>
+          <p class="response-note" data-i18n="contact.response">Meestal antwoord binnen 1 werkdag.</p>
           <ul class="contact-assurance">
-            <li>Vrijblijvend &amp; gratis offerte</li>
-            <li>Persoonlijk advies op maat van je event</li>
-            <li>Geen btw — alles inbegrepen</li>
+            <li data-i18n="contact.a1">Vrijblijvend &amp; gratis offerte</li>
+            <li data-i18n="contact.a2">Persoonlijk advies op maat van je event</li>
+            <li data-i18n="contact.a3">Geen btw — alles inbegrepen</li>
           </ul>
         </div>
         <!-- Replace FORMSPREE_ENDPOINT in script.js with your form endpoint before publishing. -->
         <form class="quote-form" id="quote-form" data-formspree-endpoint="FORMSPREE_ENDPOINT" data-reveal="right" novalidate>
-          <div class="form-row"><div class="field"><label for="name">Naam <b>*</b></label><input id="name" name="naam" autocomplete="name" required></div><div class="field"><label for="email">E-mail <b>*</b></label><input id="email" name="email" type="email" autocomplete="email" required></div></div>
-          <div class="form-row"><div class="field"><label for="phone">Telefoon</label><input id="phone" name="telefoon" type="tel" autocomplete="tel"></div><div class="field"><label for="date">Datum event <b>*</b></label><input id="date" name="datum" type="date" required aria-describedby="date-hint"><span class="field-hint" id="date-hint">Nog niet zeker? Geef gerust een richtdatum.</span></div></div>
-          <div class="form-row"><div class="field"><label for="location">Locatie / postcode</label><input id="location" name="locatie" autocomplete="postal-code"></div><div class="field"><label for="package">Gewenst pakket <b>*</b></label><select id="package" name="pakket" required><option value="" selected disabled>Kies een pakket</option><option value="Alleen beamer">Alleen beamer</option><option value="Full big-screen set">Full big-screen set</option><option value="Full-service event">Full-service event</option><option value="Business of meerdaags">Business of meerdaags</option><option value="Nog niet zeker">Ik ben nog niet zeker</option></select></div></div>
-          <div class="field"><label for="message">Vertel kort iets over je event</label><textarea id="message" name="bericht" rows="4" placeholder="Bijvoorbeeld: filmavond voor 25 personen, opbouw in de tuin…"></textarea></div>
-          <div class="form-footer"><p>Door te versturen ga je akkoord met ons <a href="privacybeleid.html">privacybeleid</a>.</p><button class="button button-lg" type="submit">Vraag offerte aan <span aria-hidden="true">↗</span></button></div>
+          <div class="form-row"><div class="field"><label for="name"><span data-i18n="form.name">Naam</span> <b>*</b></label><input id="name" name="naam" autocomplete="name" required></div><div class="field"><label for="email"><span data-i18n="form.email">E-mail</span> <b>*</b></label><input id="email" name="email" type="email" autocomplete="email" required></div></div>
+          <div class="form-row"><div class="field"><label for="phone" data-i18n="form.phone">Telefoon</label><input id="phone" name="telefoon" type="tel" autocomplete="tel"></div><div class="field"><label for="date"><span data-i18n="form.date">Datum event</span> <b>*</b></label><input id="date" name="datum" type="date" required aria-describedby="date-hint"><span class="field-hint" id="date-hint" data-i18n="form.datehint">Nog niet zeker? Geef gerust een richtdatum.</span></div></div>
+          <div class="form-row"><div class="field"><label for="location" data-i18n="form.location">Locatie / postcode</label><input id="location" name="locatie" autocomplete="postal-code"></div><div class="field"><label for="package"><span data-i18n="form.package">Gewenst pakket</span> <b>*</b></label><select id="package" name="pakket" required><option value="" selected disabled data-i18n="form.choose">Kies een pakket</option><option value="Alleen beamer" data-i18n="pkg.1.t">Alleen beamer</option><option value="Full big-screen set" data-i18n="pkg.2.t">Full big-screen set</option><option value="Full-service event" data-i18n="pkg.3.t">Full-service event</option><option value="Business of meerdaags" data-i18n="pkg.4.t">Business &amp; meerdaags</option><option value="Nog niet zeker" data-i18n="form.unsure">Ik ben nog niet zeker</option></select></div></div>
+          <div class="field"><label for="message" data-i18n="form.message">Vertel kort iets over je event</label><textarea id="message" name="bericht" rows="4" data-i18n-ph="form.placeholder" placeholder="Bijvoorbeeld: filmavond voor 25 personen, opbouw in de tuin…"></textarea></div>
+          <div class="form-footer"><p data-i18n="form.consent">Door te versturen ga je akkoord met ons <a href="privacybeleid.html">privacybeleid</a>.</p><button class="button button-lg" type="submit" data-i18n="form.submit">Vraag offerte aan <span aria-hidden="true">↗</span></button></div>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-          <div class="form-success" id="form-success" tabindex="-1" hidden><span aria-hidden="true">✓</span><h3>Bedankt voor je aanvraag.</h3><p>Je hoort meestal binnen 1 werkdag van ons. Snel nodig — bijvoorbeeld voor een WK-match dit weekend? Stuur ons gerust een <a href="https://wa.me/32XXXXXXXXX?text=Hoi%20Beamerij%2C%20ik%20heb%20net%20een%20aanvraag%20gedaan%20en%20het%20is%20wat%20dringend." target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p></div>
+          <div class="form-success" id="form-success" tabindex="-1" hidden><span aria-hidden="true">✓</span><h3 data-i18n="form.successtitle">Bedankt voor je aanvraag.</h3><p data-i18n="form.successbody">Je hoort meestal binnen 1 werkdag van ons. Snel nodig — bijvoorbeeld voor een WK-match dit weekend? Stuur ons gerust een <a href="https://wa.me/32XXXXXXXXX?text=Hoi%20Beamerij%2C%20ik%20heb%20net%20een%20aanvraag%20gedaan%20en%20het%20is%20wat%20dringend." target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p></div>
         </form>
       </div>
     </section>
@@ -257,25 +266,26 @@
 
   <footer class="site-footer">
     <div class="container footer-top">
-      <a class="brand" href="#top" aria-label="Beamerij, naar boven"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="lens" cx="13" cy="20" r="6.5" fill="currentColor"></circle><polygon class="beam beam-1" points="20,20 60,7 60,13" fill="currentColor"></polygon><polygon class="beam beam-2" points="20,20 60,17 60,23" fill="currentColor"></polygon><polygon class="beam beam-3" points="20,20 60,27 60,33" fill="currentColor"></polygon></svg></span><span class="brand-word"><span class="brand-main">beamer</span><span class="brand-suffix">ij</span></span></a>
-      <p>Premium big-screen rental voor momenten die mogen binnenkomen.</p>
-      <a class="footer-cta" href="#contact">Offerte aanvragen <span>↗</span></a>
+      <a class="brand" href="#top" aria-label="Beamerij"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="lens" cx="13" cy="20" r="6.5" fill="currentColor"></circle><polygon class="beam beam-1" points="20,20 60,7 60,13" fill="currentColor"></polygon><polygon class="beam beam-2" points="20,20 60,17 60,23" fill="currentColor"></polygon><polygon class="beam beam-3" points="20,20 60,27 60,33" fill="currentColor"></polygon></svg></span><span class="brand-word"><span class="brand-main">beamer</span><span class="brand-suffix">ij</span></span></a>
+      <p data-i18n="footer.tagline">Premium big-screen rental voor momenten die mogen binnenkomen.</p>
+      <a class="footer-cta" href="#contact" data-i18n="footer.cta">Offerte aanvragen <span>↗</span></a>
     </div>
     <div class="container footer-middle">
-      <div><p class="footer-title">Navigatie</p><a href="#pakketten">Pakketten</a><a href="#gelegenheden">Gelegenheden</a><a href="#werkwijze">Hoe het werkt</a><a href="#faq">FAQ</a></div>
-      <div><p class="footer-title">Contact</p><a href="mailto:info@beamerij.be">info@beamerij.be</a><a href="tel:+32XXXXXXXXX">Bel ons</a><a href="https://wa.me/32XXXXXXXXX?text=Hoi%20Beamerij%2C%20ik%20heb%20een%20vraag." target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="#contact">Datum aanvragen</a></div>
-      <div><p class="footer-title">Regio</p><p>Antwerpen + 15 km<br>Daarbuiten op aanvraag</p></div>
+      <div><p class="footer-title" data-i18n="footer.nav">Navigatie</p><a href="#pakketten" data-i18n="nav.packages">Pakketten</a><a href="#gelegenheden" data-i18n="nav.occasions">Gelegenheden</a><a href="#werkwijze" data-i18n="nav.how">Hoe het werkt</a><a href="#faq" data-i18n="nav.faq">FAQ</a></div>
+      <div><p class="footer-title" data-i18n="nav.contact">Contact</p><a href="mailto:info@beamerij.be">info@beamerij.be</a><a href="tel:+32XXXXXXXXX" data-i18n="footer.call">Bel ons</a><a href="https://wa.me/32XXXXXXXXX?text=Hoi%20Beamerij%2C%20ik%20heb%20een%20vraag." target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="#contact" data-i18n="footer.book">Datum aanvragen</a></div>
+      <div><p class="footer-title" data-i18n="footer.region">Regio</p><p data-i18n="footer.regionbody">Antwerpen + 15 km<br>Daarbuiten op aanvraag</p></div>
     </div>
     <div class="container footer-legal">
       <p>Beamerij · Eenmanszaak · BE 0XXX.XXX.XXX</p>
-      <p>Kleine onderneming onderworpen aan de vrijstellingsregeling van btw - btw niet van toepassing.</p>
-      <div><a href="privacybeleid.html">Privacybeleid</a><a href="cookiebeleid.html">Cookiebeleid</a><a href="algemene-voorwaarden.html">Algemene voorwaarden</a><a href="#" data-cookie-settings>Cookievoorkeuren</a></div>
-      <p>© <span id="year"></span> Beamerij. Alle rechten voorbehouden.</p>
+      <p data-i18n="footer.vat">Kleine onderneming onderworpen aan de vrijstellingsregeling van btw - btw niet van toepassing.</p>
+      <div><a href="privacybeleid.html" data-i18n="footer.privacy">Privacybeleid</a><a href="cookiebeleid.html" data-i18n="footer.cookies">Cookiebeleid</a><a href="algemene-voorwaarden.html" data-i18n="footer.terms">Algemene voorwaarden</a><a href="#" data-cookie-settings data-i18n="footer.cookieprefs">Cookievoorkeuren</a></div>
+      <p>© <span id="year"></span> Beamerij. <span data-i18n="footer.rights">Alle rechten voorbehouden.</span></p>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/32XXXXXXXXX?text=Hoi%20Beamerij%2C%20ik%20wil%20graag%20een%20datum%20aanvragen." target="_blank" rel="noopener noreferrer" aria-label="Stuur Beamerij een WhatsAppbericht"><span class="wa-glyph" aria-hidden="true"></span><b>Chat met ons</b></a>
-  <button class="to-top" type="button" data-to-top aria-label="Terug naar boven"><span aria-hidden="true">↑</span></button>
+  <a class="whatsapp-float" href="https://wa.me/32XXXXXXXXX?text=Hoi%20Beamerij%2C%20ik%20wil%20graag%20een%20datum%20aanvragen." target="_blank" rel="noopener noreferrer" data-i18n-al="float.aria" aria-label="Stuur Beamerij een WhatsAppbericht"><svg class="wa-glyph" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652a12.062 12.062 0 005.71 1.448h.005c6.582 0 11.946-5.335 11.949-11.893a11.821 11.821 0 00-3.487-8.464"/></svg><b data-i18n="float.chat">Chat met ons</b></a>
+  <button class="to-top" type="button" data-to-top data-i18n-al="totop.aria" aria-label="Terug naar boven"><span aria-hidden="true">↑</span></button>
+  <script src="lang.js" defer></script>
   <script src="script.js" defer></script>
   <script src="consent.js" defer></script>
 </body>

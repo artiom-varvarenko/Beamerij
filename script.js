@@ -182,12 +182,12 @@ quoteForm?.addEventListener('submit', async (event) => {
   if (!quoteForm.checkValidity()) { quoteForm.reportValidity(); return; }
   const endpoint = quoteForm.dataset.formspreeEndpoint || formspreeEndpoint;
   if (!endpoint || endpoint === 'FORMSPREE_ENDPOINT') {
-    formStatus.textContent = 'De formulierkoppeling is nog niet ingesteld. Mail ons intussen via info@beamerij.be.';
+    formStatus.textContent = (window.t && window.t('form.notconfigured')) || 'De formulierkoppeling is nog niet ingesteld. Mail ons intussen via info@beamerij.be.';
     return;
   }
   const submitButton = quoteForm.querySelector('button[type="submit"]');
   submitButton.disabled = true;
-  submitButton.textContent = 'Even versturen…';
+  submitButton.textContent = (window.t && window.t('form.sending')) || 'Even versturen…';
   try {
     const response = await fetch(endpoint, { method: 'POST', body: new FormData(quoteForm), headers: { Accept: 'application/json' } });
     if (!response.ok) throw new Error('Form submission failed');
@@ -196,9 +196,9 @@ quoteForm?.addEventListener('submit', async (event) => {
     formSuccess.focus();
     track('generate_lead', { pakket: quoteForm.querySelector('#package')?.value || 'onbekend' });
   } catch (error) {
-    formStatus.textContent = 'Versturen lukte niet. Probeer opnieuw of mail ons rechtstreeks via info@beamerij.be.';
+    formStatus.textContent = (window.t && window.t('form.error')) || 'Versturen lukte niet. Probeer opnieuw of mail ons rechtstreeks via info@beamerij.be.';
     submitButton.disabled = false;
-    submitButton.innerHTML = 'Vraag offerte aan <span aria-hidden="true">↗</span>';
+    submitButton.innerHTML = (window.t && window.t('form.submit')) || 'Vraag offerte aan <span aria-hidden="true">↗</span>';
   }
 });
 
