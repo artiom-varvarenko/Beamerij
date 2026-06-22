@@ -3,7 +3,7 @@
    Replace FORMSPREE_ENDPOINT with the URL Formspree supplies,
    e.g. https://formspree.io/f/xxxxabcd.
    ============================================================ */
-const formspreeEndpoint = 'FORMSPREE_ENDPOINT';
+const formspreeEndpoint = 'https://formspree.io/f/xvzjogpb';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const mqDesktop = window.matchMedia('(min-width: 701px)');

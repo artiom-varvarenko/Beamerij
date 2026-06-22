@@ -110,7 +110,7 @@
       'form.consent': 'Door te versturen ga je akkoord met ons <a href="privacybeleid.html">privacybeleid</a>.',
       'form.submit': 'Vraag offerte aan <span aria-hidden="true">↗</span>',
       'form.successtitle': 'Bedankt voor je aanvraag.',
-      'form.successbody': 'Je hoort meestal binnen 1 werkdag van ons. Snel nodig — bijvoorbeeld voor een WK-match dit weekend? Stuur ons gerust een <a href="https://wa.me/32XXXXXXXXX?text=Hoi%20Beamerij%2C%20ik%20heb%20net%20een%20aanvraag%20gedaan%20en%20het%20is%20wat%20dringend." target="_blank" rel="noopener noreferrer">WhatsApp</a>.',
+      'form.successbody': 'Je hoort meestal binnen 1 werkdag van ons. Snel nodig — bijvoorbeeld voor een WK-match dit weekend? Stuur ons gerust een <a href="https://wa.me/32485066991?text=Hoi%20Beamerij%2C%20ik%20heb%20net%20een%20aanvraag%20gedaan%20en%20het%20is%20wat%20dringend." target="_blank" rel="noopener noreferrer">WhatsApp</a>.',
       'form.sending': 'Even versturen…',
       'form.notconfigured': 'De formulierkoppeling is nog niet ingesteld. Mail ons intussen via info@beamerij.be.',
       'form.error': 'Versturen lukte niet. Probeer opnieuw of mail ons rechtstreeks via info@beamerij.be.',
@@ -292,7 +292,7 @@
       'form.consent': 'En envoyant, vous acceptez notre <a href="privacybeleid.html">politique de confidentialité</a>.',
       'form.submit': 'Demander un devis <span aria-hidden="true">↗</span>',
       'form.successtitle': 'Merci pour votre demande.',
-      'form.successbody': 'Vous aurez généralement de nos nouvelles sous 1 jour ouvrable. Besoin rapide — par exemple pour un match de la Coupe du Monde ce week-end ? Envoyez-nous volontiers un <a href="https://wa.me/32XXXXXXXXX?text=Hoi%20Beamerij%2C%20ik%20heb%20net%20een%20aanvraag%20gedaan%20en%20het%20is%20wat%20dringend." target="_blank" rel="noopener noreferrer">WhatsApp</a>.',
+      'form.successbody': 'Vous aurez généralement de nos nouvelles sous 1 jour ouvrable. Besoin rapide — par exemple pour un match de la Coupe du Monde ce week-end ? Envoyez-nous volontiers un <a href="https://wa.me/32485066991?text=Hoi%20Beamerij%2C%20ik%20heb%20net%20een%20aanvraag%20gedaan%20en%20het%20is%20wat%20dringend." target="_blank" rel="noopener noreferrer">WhatsApp</a>.',
       'form.sending': 'Envoi en cours…',
       'form.notconfigured': 'La connexion du formulaire n\'est pas encore configurée. En attendant, écrivez-nous à info@beamerij.be.',
       'form.error': 'L\'envoi a échoué. Réessayez ou écrivez-nous directement à info@beamerij.be.',
@@ -481,7 +481,7 @@
       'form.consent': 'By submitting you agree to our <a href="privacybeleid.html">privacy policy</a>.',
       'form.submit': 'Request a quote <span aria-hidden="true">↗</span>',
       'form.successtitle': 'Thanks for your request.',
-      'form.successbody': 'You\'ll usually hear from us within 1 working day. Need it fast — for a World Cup match this weekend, say? Feel free to send us a <a href="https://wa.me/32XXXXXXXXX?text=Hoi%20Beamerij%2C%20ik%20heb%20net%20een%20aanvraag%20gedaan%20en%20het%20is%20wat%20dringend." target="_blank" rel="noopener noreferrer">WhatsApp</a>.',
+      'form.successbody': 'You\'ll usually hear from us within 1 working day. Need it fast — for a World Cup match this weekend, say? Feel free to send us a <a href="https://wa.me/32485066991?text=Hoi%20Beamerij%2C%20ik%20heb%20net%20een%20aanvraag%20gedaan%20en%20het%20is%20wat%20dringend." target="_blank" rel="noopener noreferrer">WhatsApp</a>.',
       'form.sending': 'Just sending…',
       'form.notconfigured': 'The form connection isn\'t set up yet. In the meantime, email us at info@beamerij.be.',
       'form.error': 'Sending didn\'t work. Please try again or email us directly at info@beamerij.be.',
@@ -519,13 +519,26 @@
     document.querySelectorAll('[data-i18n]').forEach(function (el) { var v = val(el.getAttribute('data-i18n')); if (v != null) el.innerHTML = v; });
     document.querySelectorAll('[data-i18n-ph]').forEach(function (el) { var v = val(el.getAttribute('data-i18n-ph')); if (v != null) el.setAttribute('placeholder', v); });
     document.querySelectorAll('[data-i18n-al]').forEach(function (el) { var v = val(el.getAttribute('data-i18n-al')); if (v != null) el.setAttribute('aria-label', v); });
-    if (val('meta.title')) document.title = val('meta.title');
-    var md = document.querySelector('meta[name="description"]'); if (md && val('meta.desc')) md.setAttribute('content', val('meta.desc'));
+    var titleKey = document.documentElement.getAttribute('data-i18n-title') || 'meta.title';
+    if (val(titleKey)) document.title = val(titleKey);
+    var descKey = document.documentElement.getAttribute('data-i18n-desc') || 'meta.desc';
+    var md = document.querySelector('meta[name="description"]'); if (md && val(descKey)) md.setAttribute('content', val(descKey));
     document.documentElement.setAttribute('lang', current === 'nl' ? 'nl-BE' : current);
     document.querySelectorAll('[data-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === current)); });
     window.__lang = current;
   }
   window.t = function (key) { return val(key) || ''; };
+
+  /* let a per-page script (e.g. legal-i18n.js) add extra translations, then re-render */
+  window.__i18nAddDict = function (extra) {
+    if (!extra) return;
+    SUPPORTED.forEach(function (l) {
+      if (!extra[l]) return;
+      var d = DICT[l] || (DICT[l] = {});
+      for (var k in extra[l]) if (Object.prototype.hasOwnProperty.call(extra[l], k)) d[k] = extra[l][k];
+    });
+    apply(current);
+  };
 
   var reduced = false;
   try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}

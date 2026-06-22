@@ -64,8 +64,12 @@
 
   function init() {
     if (!readChoice()) showBar();
-    document.querySelectorAll('[data-cookie-settings]').forEach(function (el) {
-      el.addEventListener('click', function (e) { e.preventDefault(); showBar(); });
+    /* delegated so it keeps working after the language switcher re-renders the text */
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest && e.target.closest('[data-cookie-settings]');
+      if (!t) return;
+      e.preventDefault();
+      showBar();
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

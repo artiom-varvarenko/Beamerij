@@ -382,7 +382,9 @@ body.loaded .hero [data-hero]{opacity:1;transform:none}
 .legal-content ul{padding-left:20px}
 .legal-content a{color:var(--gold-light);text-decoration:underline}
 .legal-note{padding:18px;border-left:2px solid var(--gold);background:#1c1c1a;color:#d6d1c5!important}
-.legal-back{display:inline-flex;gap:10px;margin-bottom:28px;color:var(--gold-light);font-size:13px}
+.legal-back{display:flex;width:fit-content;gap:10px;margin-bottom:28px;color:var(--gold-light);font-size:13px}
+.nav-actions{display:flex;align-items:center;gap:14px}
+@media (max-width:700px){.legal-page .nav-actions .button{display:none}}
 
 /* ============================================================
    Reveal animation system
