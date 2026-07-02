@@ -1,0 +1,11 @@
+{
+  "name": "Beamerij",
+  "short_name": "Beamerij",
+  "icons": [
+    { "src": "/images/favicon-192x192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/images/favicon-512x512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "theme_color": "#100f0d",
+  "background_color": "#100f0d",
+  "display": "standalone"
+}
