@@ -43,9 +43,13 @@ Zoek in de repository naar elk van deze placeholders en vervang ze:
 
 De Formspree-logica toont na een succesvolle verzending een vriendelijke successtatus. Zonder endpoint toont de site bewust een heldere foutmelding en verstuurt zij niets.
 
-### Seizoensgebonden aankondigingsbalk
+### Seizoensgebonden WK-inhoud (verwijderen/aanpassen na ~19 juli 2026)
 
-Bovenaan staat een goudkleurige balk die naar het **WK 2026** verwijst (`<a class="announce">` in `index.html`). Pas die tekst aan of verwijder het hele `<a class="announce">…</a>`-blok na het toernooi; de header schuift dan automatisch naar boven (de hoogte wordt via de CSS-variabele `--announce-h` door `script.js` gemeten).
+Drie plekken verwijzen hard naar het **WK 2026**:
+
+1. De goudkleurige balk bovenaan (`<a class="announce">` in `index.html`). Verwijder het hele blok na het toernooi; de header schuift dan automatisch naar boven (de hoogte wordt via de CSS-variabele `--announce-h` door `script.js` gemeten). Pas ook de teksten `announce.*` in `lang.js` aan (3 talen).
+2. De donkere **WK-band** (`<section class="wk-band">` in `index.html`, teksten `wk.*` in `lang.js`). Verwijder de sectie of geef ze een nieuwe seizoenshaak (eindejaar, Champions League…).
+3. Het label op de eerste gelegenheid-kaart (`occ.tag` = "WK 2026 · nu bezig" in `lang.js`) en de succestekst van het formulier (`form.successbody` vermeldt een WK-match).
 
 ## Analytics & advertenties (Google Analytics 4 + Google Ads)
 
@@ -72,12 +76,12 @@ De site gebruikt geoptimaliseerde JPEG-foto's in `images/`. Ze zijn met een scri
 
 | Bestand (in gebruik) | Bron-PNG | Waar |
 | --- | --- | --- |
-| `movie-night.jpg` | `MovieNight_Beamerij.png` | Hero + occasion "Tuincinema & filmavonden" |
-| `football-garden.jpg` | `WorldCup_Beamerij.png` | Occasion "Voetbal & WK 2026" |
-| `gaming.jpg` | `GameNight_Beamerij.png` | Occasion "Gaming & esports" |
-| `wedding.jpg` | `Wedding_Beamerij.png` | Occasion "Huwelijken & feesten" + atmosfeerband |
-| `business.jpg` | `Business_Beamerij.png` | Occasion "Presentaties & gala's" |
-| `football-terras.jpg` | `WorldCup_Beamerij2.png` | Occasion "Terras & lounge viewing" + specs-visual |
+| `movie-night.jpg` | `MovieNight_Beamerij.png` | Hero + occasion "Tuincinema & filmavond" |
+| `football-garden.jpg` | `WorldCup_Beamerij.png` | WK-band + occasion "Sport in de tuin" |
+| `gaming.jpg` | `GameNight_Beamerij.png` | Sectie "Dit zit er in de set" + occasion "Gaming & esports" |
+| `wedding.jpg` | `Wedding_Beamerij.png` | Occasion "Huwelijken & feesten" |
+| `business.jpg` | `Business_Beamerij.png` | Occasion "Bedrijfsevents" |
+| `football-terras.jpg` | `WorldCup_Beamerij2.png` | Occasion "Voetbal & WK 2026" |
 
 Wil je een foto vervangen? Behoud de bestandsnaam (dan hoeft de HTML niet aangepast) en exporteer bij voorkeur als geoptimaliseerde JPEG/WebP (kwaliteit ca. 80–85). Houd de `width`/`height`-attributen in `index.html` in lijn met de nieuwe verhoudingen om layout-shift te vermijden.
 
@@ -87,9 +91,9 @@ Wil je een foto vervangen? Behoud de bestandsnaam (dan hoeft de HTML niet aangep
 
 ## Inhoud aanpassen
 
-- Pagina-inhoud, prijzen, SEO-titel, meta description en JSON-LD (incl. een `FAQPage`-blok) staan in `index.html`.
-- Alle vormgeving, responsive breakpoints en animaties staan in `styles.css`.
-- Navigatie, scroll-animaties, parallax, count-up, voortgangsbalk en Formspree-verzending staan in `script.js`.
+- Pagina-inhoud, prijzen, SEO-titel, meta description en JSON-LD (incl. een `FAQPage`-blok) staan in `index.html`. Alle zichtbare teksten komen uit `lang.js` (NL/FR/EN): pas je een tekst aan, doe dat dan in `index.html` (NL-bron) **én** in de drie woordenboeken in `lang.js`.
+- Alle vormgeving en responsive breakpoints staan in `styles.css` (donker, conversiegericht ontwerp; transparante header die bij het scrollen dicht gaat; licht enkel op de datumchecker in de hero en de formulierkaart).
+- Navigatie, subtiele scroll-reveals, de datumchecker in de hero (vult het formulier vooraf in), pakketknoppen die het juiste pakket voorselecteren en de Formspree-verzending staan in `script.js`.
 - Privacy, cookiebeleid en voorwaarden zijn losse pagina's: `privacybeleid.html`, `cookiebeleid.html` en `algemene-voorwaarden.html`.
 
 ## Aannames en aandachtspunten

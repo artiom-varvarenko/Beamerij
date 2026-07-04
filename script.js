@@ -1,33 +1,26 @@
 /* ============================================================
-   Beamerij — interactions & motion
+   Beamerij — interactions
    Replace FORMSPREE_ENDPOINT with the URL Formspree supplies,
    e.g. https://formspree.io/f/xxxxabcd.
    ============================================================ */
 const formspreeEndpoint = 'https://formspree.io/f/xvzjogpb';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const mqDesktop = window.matchMedia('(min-width: 701px)');
 const mqMobile = window.matchMedia('(max-width: 700px)');
-let canParallax = mqDesktop.matches && !reducedMotion;
 
 const root = document.documentElement;
 const body = document.body;
-const header = document.querySelector('[data-header]');
 const announce = document.querySelector('[data-announce]');
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
-const progressBar = document.querySelector('[data-progress-bar]');
 const toTop = document.querySelector('[data-to-top]');
-const parallaxEls = Array.from(document.querySelectorAll('[data-parallax]'));
 
 /* ---------- announcement bar height (drives header offset) ---------- */
 function syncAnnounceHeight() {
   if (announce) root.style.setProperty('--announce-h', announce.offsetHeight + 'px');
 }
-function measureParallax() { for (const el of parallaxEls) el._ph = el.offsetHeight; }
 syncAnnounceHeight();
-measureParallax();
-window.addEventListener('resize', () => { syncAnnounceHeight(); measureParallax(); }, { passive: true });
+window.addEventListener('resize', syncAnnounceHeight, { passive: true });
 window.addEventListener('load', syncAnnounceHeight);
 
 /* ---------- single rAF-driven scroll loop ---------- */
@@ -35,10 +28,8 @@ let ticking = false;
 let lastY = window.scrollY;
 function onScrollFrame() {
   const y = window.scrollY;
-  const docH = root.scrollHeight - window.innerHeight;
 
-  body.classList.toggle('is-scrolled', y > 16);
-  if (progressBar) progressBar.style.width = (docH > 0 ? (y / docH) * 100 : 0) + '%';
+  body.classList.toggle('is-scrolled', y > 8);
   if (toTop) toTop.classList.toggle('is-visible', y > window.innerHeight * 0.9);
 
   /* headroom: hide the announce bar when scrolling down, bring it back on scroll up */
@@ -58,32 +49,12 @@ function onScrollFrame() {
   } else {
     lastY = y;
   }
-
-  if (canParallax) {
-    const vh = window.innerHeight;
-    const rects = parallaxEls.map((el) => el.getBoundingClientRect());
-    for (let i = 0; i < parallaxEls.length; i++) {
-      const el = parallaxEls[i], rect = rects[i];
-      const factor = parseFloat(el.dataset.parallax) || 0.15;
-      const offset = (rect.top + rect.height / 2) - vh / 2;
-      const max = (el._ph || rect.height) * 0.1;
-      let shift = offset * factor * 0.4;
-      if (shift > max) shift = max; else if (shift < -max) shift = -max;
-      el.style.transform = 'translate3d(0,' + shift.toFixed(1) + 'px,0)';
-    }
-  }
   ticking = false;
 }
 function requestScroll() { if (!ticking) { ticking = true; requestAnimationFrame(onScrollFrame); } }
 window.addEventListener('scroll', requestScroll, { passive: true });
 window.addEventListener('resize', requestScroll, { passive: true });
 onScrollFrame();
-
-mqDesktop.addEventListener('change', (e) => {
-  canParallax = e.matches && !reducedMotion;
-  if (!canParallax) parallaxEls.forEach((el) => { el.style.transform = ''; });
-  else { measureParallax(); requestScroll(); }
-});
 
 /* ---------- navigation ---------- */
 function setMenu(open) {
@@ -113,64 +84,61 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-/* ---------- count-up numbers ---------- */
-function countUp(el) {
-  const target = parseFloat(el.dataset.count);
-  const suffix = el.dataset.suffix || '';
-  if (isNaN(target) || reducedMotion) return;
-  const duration = 1100;
-  let start = null;
-  function step(ts) {
-    if (start === null) start = ts;
-    const p = Math.min((ts - start) / duration, 1);
-    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
-    if (p < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
 /* ---------- reveal-on-scroll + staggered groups ---------- */
 const revealEls = document.querySelectorAll('[data-reveal], .reveal');
 document.querySelectorAll('[data-reveal-group]').forEach((group) => {
   group.querySelectorAll('[data-reveal]').forEach((kid, i) => {
-    kid.style.transitionDelay = (i * 0.08).toFixed(2) + 's';
+    kid.style.transitionDelay = (i * 0.06).toFixed(2) + 's';
   });
 });
 
 if (reducedMotion || !('IntersectionObserver' in window)) {
-  revealEls.forEach((el) => {
-    el.classList.add(el.hasAttribute('data-reveal') ? 'is-in' : 'is-visible');
-    el.querySelectorAll('[data-count]').forEach((c) => { c.textContent = c.dataset.count + (c.dataset.suffix || ''); });
-  });
+  revealEls.forEach((el) => el.classList.add(el.hasAttribute('data-reveal') ? 'is-in' : 'is-visible'));
 } else {
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      const el = entry.target;
-      el.classList.add(el.hasAttribute('data-reveal') ? 'is-in' : 'is-visible');
-      el.querySelectorAll('[data-count]').forEach(countUp);
-      obs.unobserve(el);
+      entry.target.classList.add(entry.target.hasAttribute('data-reveal') ? 'is-in' : 'is-visible');
+      obs.unobserve(entry.target);
     });
-  }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
   revealEls.forEach((el) => observer.observe(el));
 }
-
-/* ---------- hero entrance (independent of image loading) ---------- */
-requestAnimationFrame(() => body.classList.add('loaded'));
 
 /* ---------- back to top ---------- */
 toTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
 
 /* ---------- form niceties ---------- */
 const dateInput = document.querySelector('#date');
-if (dateInput) {
+const heroDateInput = document.querySelector('#hero-date');
+{
   const now = new Date();
   now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
-  dateInput.min = now.toISOString().slice(0, 10);
+  const today = now.toISOString().slice(0, 10);
+  if (dateInput) dateInput.min = today;
+  if (heroDateInput) heroDateInput.min = today;
 }
 
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
+
+/* ---------- hero availability check: prefill the form & jump to it ---------- */
+const quickCheck = document.querySelector('[data-quick-check]');
+quickCheck?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (heroDateInput?.value && dateInput) dateInput.value = heroDateInput.value;
+  track('contact_cta');
+  document.querySelector('#contact')?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
+  window.setTimeout(() => document.querySelector('#name')?.focus({ preventScroll: true }), reducedMotion ? 0 : 500);
+});
+
+/* ---------- package buttons pre-select their package in the form ---------- */
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[data-package]');
+  if (!link) return;
+  const select = document.querySelector('#package');
+  if (select) select.value = link.dataset.package;
+});
 
 /* ---------- quote form (Formspree) ---------- */
 const quoteForm = document.querySelector('#quote-form');
@@ -198,7 +166,7 @@ quoteForm?.addEventListener('submit', async (event) => {
   } catch (error) {
     formStatus.textContent = (window.t && window.t('form.error')) || 'Versturen lukte niet. Probeer opnieuw of mail ons rechtstreeks via info@beamerij.be.';
     submitButton.disabled = false;
-    submitButton.innerHTML = (window.t && window.t('form.submit')) || 'Vraag offerte aan <span aria-hidden="true">↗</span>';
+    submitButton.textContent = (window.t && window.t('form.submit')) || 'Vraag vrijblijvend je offerte';
   }
 });
 
