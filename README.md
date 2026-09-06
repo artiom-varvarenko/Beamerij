@@ -19,6 +19,7 @@ Open `http://127.0.0.1:8080/?lang=nl`. Gebruik `?lang=fr` of `?lang=en` voor de 
 - Kleuren: donkergroen `#15231d`, warm ivoor `#f3f2ea`, licht lime `#d9ef93`.
 - Typografie: Barlow Condensed 700 en Manrope 400–800; lokaal gehost in `fonts/`, met de oorspronkelijke OFL-licenties.
 - Het nieuwe projectorbeeldmerk staat inline in de homepage en juridische pagina's. Favicons, Apple-iconen en `site.webmanifest` gebruiken dezelfde identiteit. Oudere bestanden in `logo/` blijven als bronarchief bewaard en worden niet door het nieuwe ontwerp geladen.
+- Het browser-tabblad gebruikt een SVG-favicon met ICO-fallback. De homepage en alle drie juridische pagina's gebruiken dezelfde versieparameter (`v=20260906-samen-groots`). Verhoog die bij een gewijzigd favicon in alle vier HTML-bestanden, zodat browsers niet het oude tabbladicoon uit hun favicon-cache blijven gebruiken.
 - Echte foto's en een sfeerfilm met oorspronkelijk camerageluid uit de aangeleverde WK-photoshoot vervangen de oude illustratieve marketingbeelden. De campagne is een terugblik, geen actuele WK-promotie of claim van een officieel partnerschap.
 
 De richting is geïnformeerd door de belevingsgerichte private-hirepresentatie van [Everyman](https://ww2.everymancinema.com/private-hire), de locatiebeelden van [Black Cat Cinema](https://www.theblackcatcinema.com/private-events) en [NN/g's onderzoek naar vertrouwen en transparante dienstverlening](https://www.nngroup.com/articles/trustworthy-design/). Er zijn geen externe merkteksten, foto's of klantbeoordelingen overgenomen.
