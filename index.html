@@ -46,7 +46,22 @@
   <script>gtag('js', new Date());gtag('config', 'G-XQZCP49KPX');</script>
   <script>
     gtag('config', 'AW-18262074604/eXWjCJSWiPAcEOzJhIRE', {
-      'phone_conversion_number': '0485 06 69 91'
+      'phone_conversion_number': '0485 06 69 91',
+      'phone_conversion_callback': function (formattedNumber, mobileNumber) {
+        function updatePhoneLink() {
+          var link = document.querySelector('.contact-phone');
+          if (!link || !formattedNumber || !mobileNumber) return;
+          link.href = 'tel:' + mobileNumber;
+          if (link.firstChild && link.firstChild.nodeType === 3) {
+            link.firstChild.nodeValue = formattedNumber + ' ';
+          }
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', updatePhoneLink, { once: true });
+        } else {
+          updatePhoneLink();
+        }
+      }
     });
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://beamerij.be/#business","name":"Beamerij","url":"https://beamerij.be/","image":"https://beamerij.be/images/campaign/social.jpg","description":"Beamer- en big-screenverhuur voor private en interne evenementen in Antwerpen.","priceRange":"€70–€450+","currenciesAccepted":"EUR","email":"info@beamerij.be","telephone":"+32485066991","areaServed":{"@type":"City","name":"Antwerpen"},"makesOffer":[{"@type":"Offer","name":"Alleen beamer — per avond","price":"70","priceCurrency":"EUR"},{"@type":"Offer","name":"Full big-screen set — per avond","price":"175","priceCurrency":"EUR"},{"@type":"Offer","name":"Full-service event — vanaf","price":"350","priceCurrency":"EUR"},{"@type":"Offer","name":"Business en meerdaags — vanaf","price":"450","priceCurrency":"EUR"}]}</script>
