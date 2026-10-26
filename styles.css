@@ -394,3 +394,33 @@ body.motion-paused .hero-media{transform:none;will-change:auto}
   body,.hero,.process,.contact,.site-footer{background:white!important;color:black!important}
   .hero{min-height:0;padding-block:25px}.hero h1{font-size:70px}.hero-description{color:black}.section{padding-block:30px}.container{width:100%}.display-title{font-size:45px}.package-card{break-inside:avoid}.quote-form{border:1px solid #999}[data-reveal]{opacity:1!important;transform:none!important}
 }
+/* Business page + homepage doors (2026-10-26) */
+.hero-business .hero-poster{object-position:50% 40%}
+.hero-business h1{font-size:clamp(104px,12.4vw,190px)}
+.usp-strip{background:var(--lime);padding-block:26px}
+.usp-list{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.usp-list li{position:relative;padding-left:22px;font-size:12px;font-weight:800;line-height:1.5}
+.usp-list li::before{content:'↗';position:absolute;left:0;top:0}
+.work{background:var(--paper)}
+.work-grid{display:grid;grid-template-columns:1.7fr 1fr;gap:28px 16px;align-items:start}
+.work-item{margin:0;overflow:hidden}
+.work-item{display:block}.work-item img{display:block;width:100%;height:auto;object-fit:cover;transition:transform 1.2s var(--ease)}
+.work-item:hover img{transform:scale(1.03)}
+.work-wide img{aspect-ratio:16/10}
+.work-tall img{aspect-ratio:15/16}
+.work-item figcaption{font-size:10px;color:var(--muted);padding-top:10px}
+.client-row{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line);font:700 clamp(26px,2.6vw,38px)/1 var(--display);text-transform:uppercase;color:var(--muted)}
+.page-business .pricing-details{margin-top:20px}
+.doors{background:var(--ink);color:var(--paper);padding-block:0}
+.door-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-inline:1px solid var(--white-line)}
+.door{display:flex;align-items:flex-start;gap:24px;padding:34px clamp(22px,3vw,48px);transition:background .3s}
+.door+.door{border-left:1px solid var(--white-line)}
+.door:hover{background:rgba(217,239,147,.08)}
+.door .eyebrow{font-size:9px;color:#a8b398;margin-bottom:8px}
+.door h2{font:700 clamp(26px,2.6vw,40px)/1.05 var(--display);text-transform:uppercase}
+.door p{font-size:12px;color:#b7c0af;margin-top:8px;max-width:420px}
+.door>span:last-child{margin-left:auto;font-size:30px;color:var(--lime);transition:transform .35s var(--ease)}
+.door:hover>span:last-child{transform:translate(4px,-4px)}
+@media(max-width:960px){.usp-list{grid-template-columns:repeat(2,minmax(0,1fr))}.work-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.hero-business h1{font-size:clamp(72px,21vw,140px)}.usp-list{grid-template-columns:1fr;gap:12px}.work-grid{grid-template-columns:1fr}.work-tall img{aspect-ratio:4/5}.door-grid{grid-template-columns:1fr;border-inline:0}.door{padding-inline:0}.door+.door{border-left:0;border-top:1px solid var(--white-line)}}
+@media(max-width:700px){.page-business .display-title{font-size:clamp(48px,14.5vw,80px);overflow-wrap:anywhere;hyphens:auto}.page-business .process .display-title,.page-business .contact .display-title,.page-business .faq-layout .display-title,.page-business .occasions-intro .display-title{font-size:clamp(48px,14.5vw,80px)}}

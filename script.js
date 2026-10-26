@@ -621,6 +621,22 @@
     renderMotion();
   });
 
+  /* Google Ads click ID: kept 90 days (only after ad-storage consent) so a paid job can be imported as an offline conversion. */
+  (() => {
+    const KEY = 'beamerij-gclid';
+    const consented = () => { try { return localStorage.getItem('beamerij-consent') === 'granted'; } catch (_) { return false; } };
+    let gclid = '';
+    try { gclid = new URLSearchParams(window.location.search).get('gclid') || ''; } catch (_) {}
+    try {
+      if (gclid && consented()) localStorage.setItem(KEY, JSON.stringify({ v: gclid, t: Date.now() }));
+      if (!gclid && consented()) {
+        const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+        if (saved && Date.now() - saved.t < 90 * 864e5) gclid = saved.v;
+      }
+    } catch (_) {}
+    document.querySelectorAll('[data-gclid]').forEach(input => { input.value = gclid; });
+  })();
+
   const year = document.querySelector('#year');
   if (year) year.textContent = String(new Date().getFullYear());
   refreshDateMinimum();
